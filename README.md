@@ -1,6 +1,6 @@
-# MacBook8,1 on Omarchy 4
+# Fixes for MacBook 12" on Omarchy 4
 
-Getting the **12-inch Retina MacBook** fully working on **Omarchy 4**: built-in keyboard,
+Getting the **12-inch Retina MacBook** (MacBook8,1) fully working on **Omarchy 4**: built-in keyboard,
 touchpad, and suspend. Two kernel parameters. Nothing else.
 
 ## The machine
