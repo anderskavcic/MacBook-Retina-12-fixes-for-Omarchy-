@@ -137,8 +137,8 @@ Wi-Fi works out of the box on Omarchy — no driver work needed. One limitation:
 
 - Root cause diagnosed by **matthiasjg**, independently confirmed by **jpumfrey**, in
   [basecamp/omarchy#1954](https://github.com/basecamp/omarchy/issues/1954).
-- This repo adds the suspend finding (no sleep hook — the upstream hook is harmful), the
-  hibernation investigation, and the Wi-Fi/WPA3 limitation.
+- This repo adds the suspend finding (no sleep hook: the upstream hook is harmful), the
+  hibernation investigation, and the Wi-Fi/WPA3 limitation and a SKILL for agents.
 
 ## Licence
 
