@@ -71,7 +71,7 @@ An agent skill is included for applying this in a controlled way:
 - Reads current state first and stops if the fix is already applied.
 - Requires **explicit confirmation** before writing, and checks the parameters actually reached
   `/boot/limine.conf` before telling you to reboot.
-- **Wi-Fi and hibernation are out of scope** by design.
+- **Hibernation are out of scope** by design.
 - `.claude/skills/macbook81-spi-fix` is a symlink to it, so Claude Code picks it up automatically
   when this repo is cloned. Copy either path into `~/.claude/skills/` to make it available
   system-wide.
