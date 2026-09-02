@@ -1,0 +1,23 @@
+#!/bin/bash
+#
+# /usr/lib/systemd/system-sleep/macbook81-kbd-backlight
+#
+# MacBook8,1 (MacBook Retina 12-inch, Early 2015) on Omarchy 4.
+#
+# applespi registers the keyboard backlight as an LED class device but never
+# sets LED_CORE_SUSPENDRESUME, and applespi_suspend() turns off only the
+# caps-lock LED. Nothing in the kernel zeroes the backlight. Under S3 the
+# topcase would lose power and go dark anyway; under mem_sleep_default=s2idle
+# it stays powered, so the backlight stays lit for the whole suspend.
+#
+# Save + zero on the way down, restore on the way up. brightnessctl does both
+# via omarchy-brightness-keyboard, which also handles device discovery.
+#
+# This writes a brightness value only. It does NOT unbind applespi or unload
+# the module -- that is the harmful upstream hook, which destroys the wake
+# source. Wake-on-built-in-keyboard is unaffected.
+
+case "$1" in
+  pre)  /usr/bin/omarchy-brightness-keyboard --no-osd off ;;
+  post) /usr/bin/omarchy-brightness-keyboard --no-osd restore ;;
+esac
